@@ -11,8 +11,8 @@ app.use(cors(corsOptions))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-const db = require("./Models/index")
-const drUrl = require("./Config/db.config")
+const db = require("./models/server")
+const drUrl = require("./configs/db.config")
 mongoose.connect(drUrl.url, 
   {useNewUrlParser: true}).then(() => {
   console.log("Connected to the database")
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
   res.json({message: "Welcome to Express MongoDB application."})
 })
 
-require("./Routes/employee.routes")(app)
+require("./routes/employee.routes")(app)
 
 // Set port and listen for requests
 const PORT = process.env.PORT || 8080

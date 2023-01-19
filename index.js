@@ -5,7 +5,7 @@ const bodyParser = require("body-parser")
  
 const app = express()
 const corsOptions = {
-  origin: [ "https://mongo-api-ote9.onrender.com","http://localhost:4200","*","https://app.netlify.com/sites/bejewelled-scone-8c79f5"]
+  origin: [ "https://mongo-api-ote9.onrender.com","https://hr-web-app.vercel.app",http://localhost:4200","*","https://app.netlify.com/sites/bejewelled-scone-8c79f5"]
 }
 app.use(cors(corsOptions))
 app.use(bodyParser.json())

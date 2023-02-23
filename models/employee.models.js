@@ -7,21 +7,30 @@ const schema = new mongoose.Schema({
     },
     fullname: {
         type: String,
-        default: ''
+        required: true,
     },
     jobtitle: {
         type: String,
-        default: ''
+        required: true,
     },
     email: {
         type: String,
-        
+        min: 8,
+        required: true,
     },
     phonenumber: {
-        type: Number
+        type: Number,
+        maxlength: 10,
+        required: true,
     },
     department: {
-        type: String
+        type: String,
+        required: true,
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
     }
 });
 const employee = new mongoose.model('Employee', schema);

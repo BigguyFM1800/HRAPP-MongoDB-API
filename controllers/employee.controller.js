@@ -9,8 +9,7 @@ exports.create = async (req, res) => {
     !req.body.lastname &&
     !req.body.email &&
     !req.body.address &&
-    !req.body.phone &&
-    !req.body.profilepic
+    !req.body.phone
   ) {
     res.status(400).send({ message: "Content cannot be empty!" });
     return;
@@ -18,7 +17,7 @@ exports.create = async (req, res) => {
 
   // Create an Employee
   const employee = new Employee({
-    profilepic: req.body.profilepic,
+    profilepic: "",
     fullname: req.body.fullname,
     jobtitle: req.body.jobtitle,
     email: req.body.email,

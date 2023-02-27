@@ -1,7 +1,7 @@
 const express = require("express") // Express is for building the Rest apis
 const cors = require("cors") // cors provides Express middleware to enable CORS with various options.
-const mongoose = require("mongoose")
-const bodyParser = require("body-parser")
+const mongoose = require("mongoose") // allows auto refresh after each save
+const bodyParser = require("body-parser") // allows me to parse the body of the request
  
 const app = express()
 const corsOptions = {
